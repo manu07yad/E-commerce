@@ -4,7 +4,7 @@ import data from './data.js';
 
 const app = express();
 
-app.get('/api/products/:id', (req, res) => {
+app.get('/api/products/{:id}:id', (req, res) => {
     const product = data.products.find((x) => number(x._id === req.params.id));
     if (product) {
       res.send(product);
@@ -20,7 +20,7 @@ app.get('/api/products', (req,res)=>{
 });
 
 app.get('/', (req,res)=>{
-    res.send('Server is ready!!!')
+    res.send('Server is ready!!!!!')
 });
 
 app.listen(port, ()=>{
